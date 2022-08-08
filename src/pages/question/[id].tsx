@@ -12,7 +12,22 @@ const QuestionPageContent: React.FC<QuestionPageContentProps> = (props: Question
     return <div>Question not found</div>
   }
 
-  return <div>{data?.question}</div>
+  return (
+    <div className="p-8 flex flex-col">
+      <div className="text-2xl font-bold">
+        {data?.question}
+      </div>
+      <div>
+        {(data?.options as string[])?.map((option) => {
+          return (
+            <div>
+              {option}
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
 }
 
 const QuestionPage = () => {
