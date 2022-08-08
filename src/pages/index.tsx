@@ -2,11 +2,11 @@ import type { NextPage } from 'next'
 import { trpc } from '../utils/trpc'
 
 const Home: NextPage = () => {
-  const { data, isLoading } = trpc.useQuery(["hello"])
+  const { data, isLoading } = trpc.useQuery(["getAllQuestions"])
 
   if (isLoading || !data) return <div>Loading...</div>
 
-  return <div>{data.greeting}</div>
+  return <div>{data[0]?.question}</div>
 }
 
 export default Home
