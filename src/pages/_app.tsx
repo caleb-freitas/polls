@@ -1,7 +1,8 @@
+import "../styles/globals.css"
 import { withTRPC } from '@trpc/next';
 import { AppType } from 'next/dist/shared/lib/utils';
-import { AppRouter } from './api/trpc/[trpc]';
 import superjson from "superjson"
+import type { AppRouter } from '../backend/router';
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return <Component {...pageProps} />;
@@ -11,7 +12,7 @@ function getBaseUrl() {
   if (typeof window !== 'undefined') {
     return '';
   }
-  
+
   // reference for vercel.com
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL}`;
