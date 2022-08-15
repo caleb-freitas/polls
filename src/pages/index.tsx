@@ -38,8 +38,8 @@ const Home: NextPage = () => {
         <div>Questions</div>
         {data.map(question => {
           return (
-            <Link href={`question/${question.id}`}>
-              <a>
+            <Link href={`question/${question.id}`} key={question.id}>
+              <a key={question.id}>
                 <div
                   key={question.id}
                   className="my-2"
