@@ -19,10 +19,9 @@ model PollQuestion {
 }
 
 model Vote {
-  id         String   @id @default(cuid())
+  id         String       @id @default(cuid())
   questionId String
   choice     Int
-  createdAt  DateTime @default(now())
-
-  question PollQuestion @relation(fields: [questionId], references: [id])
+  createdAt  DateTime     @default(now())
+  question   PollQuestion @relation(fields: [questionId], references: [id])
 }
