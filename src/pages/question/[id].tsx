@@ -20,7 +20,7 @@ const QuestionPageContent: React.FC<QuestionPageContentProps> = (props: Question
       <div>
         {(data?.options as string[])?.map((option) => {
           return (
-            <div>
+            <div key={option}>
               {option}
             </div>
           )
